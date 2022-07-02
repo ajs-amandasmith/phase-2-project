@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
+import NavBar from "./NavBar";
+import Search from "./Search";
+import Filter from "./Filter";
+import BookListContainer from "./BookListContainer";
 
 function App() {
   return (
