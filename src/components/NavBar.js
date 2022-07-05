@@ -1,33 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../css/NavBar.css';
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  const navStyle = {
-    display: "inline-block",
-    width: "100px",
-    height: "50px",
-    padding: "12px",
-    margin: "0 6px 6px",
-    background: "blue",
-    textDecoration: "none",
-    color: "white",
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function handleLogInClick(e) {
+    console.log(e.target)
+    setIsLoggedIn(!isLoggedIn);
   }
 
-  
   return (
-    <div>
-      <NavLink to="/" style={navStyle}>
+    <div className="nav-bar">
+      <NavLink to="/" className="nav-link">
         Home
       </NavLink>
-      <NavLink to="to-read" style={navStyle}>
+      <NavLink to="to-read" className="nav-link">
         To Read List
       </NavLink>
-      <NavLink to="have-read" style={navStyle}>
+      <NavLink to="have-read" className="nav-link">
         Have Read List
       </NavLink>
-      <NavLink to="/currently-reading" style={navStyle}>
+      <NavLink to="/currently-reading" className="nav-link">
         Currently Reading List
       </NavLink>
+      <button onClick={handleLogInClick}>{isLoggedIn ? "Log Out" : "Log In"}</button>
     </div>
   )
 }

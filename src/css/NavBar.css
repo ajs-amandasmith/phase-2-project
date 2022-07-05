@@ -1,0 +1,24 @@
+.nav-bar {
+  background: #282c34;
+}
+
+.nav-link {
+  display: inline-block;
+  width: 20vh;
+  /* height: 5vh; */
+  padding: 12px;
+  margin: 0 6px 6px;
+  background: blue;
+  color: white;
+}
+
+/* const navStyle = {
+  display: "inline-block",
+  width: "100px",
+  height: "50px",
+  padding: "12px",
+  margin: "0 6px 6px",
+  background: "blue",
+  textDecoration: "none",
+  color: "white",
+} */
