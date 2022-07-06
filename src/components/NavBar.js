@@ -6,7 +6,6 @@ function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleLogInClick(e) {
-    console.log(e.target)
     setIsLoggedIn(!isLoggedIn);
   }
 
@@ -16,15 +15,15 @@ function NavBar() {
         Home
       </NavLink>
       <NavLink to="to-read" className="nav-link">
-        To Read List
+        To Read
       </NavLink>
       <NavLink to="have-read" className="nav-link">
-        Have Read List
+        Have Read
       </NavLink>
       <NavLink to="/currently-reading" className="nav-link">
-        Currently Reading List
+        Currently Reading
       </NavLink>
-      <button onClick={handleLogInClick}>{isLoggedIn ? "Log Out" : "Log In"}</button>
+      <button className="login" onClick={handleLogInClick}>{isLoggedIn ? "Log Out" : "Log In"}</button>
     </div>
   )
 }

@@ -1,24 +1,25 @@
 .nav-bar {
+  position: relative;
   background: #282c34;
+  border-top: white solid 1px;
 }
 
 .nav-link {
   display: inline-block;
-  width: 20vh;
-  /* height: 5vh; */
+  width: max-content;
   padding: 12px;
   margin: 0 6px 6px;
-  background: blue;
   color: white;
+  font-family: 'Times New Roman', Times, serif
 }
 
-/* const navStyle = {
-  display: "inline-block",
-  width: "100px",
-  height: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-} */
+.login {
+  position: absolute;
+  right: 0px;
+  margin-right: 10px;
+  top: 10px;
+  width: 100px;
+  background: white;
+  border-radius: 5px;
+  border: gray solid 5px;
+}
