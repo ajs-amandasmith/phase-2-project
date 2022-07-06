@@ -1,15 +1,11 @@
 import logo from '../logo.svg';
 import '../css/App.css';
 import NavBar from "./NavBar";
-
 import Search from "./Search";
 import Filter from "./Filter";
 import BookListContainer from "./BookListContainer";
 
 function App() {
-  const headerStyle = {
-
-  }
 
   return (
     <div>
