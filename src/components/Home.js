@@ -10,7 +10,9 @@ function Home({ bookData }) {
   return (
     <div>
       <h1 className="header">Current Hardcover Best Sellers List</h1>
-      {displayBooks}
+      <div>
+        {displayBooks}
+      </div>
     </div>
   )
 }
