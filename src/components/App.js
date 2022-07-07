@@ -7,6 +7,8 @@ import BookListContainer from "./BookListContainer";
 
 function App() {
 
+  const api = process.env.REACT_APP_NYT_KEY
+
   return (
     <div>
       <header className="App-header">
