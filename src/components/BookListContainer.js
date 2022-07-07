@@ -5,12 +5,13 @@ import ReadList from "./ReadList";
 import CurrentList from "./CurrentList";
 import Home from "./Home";
 
-function BookListContainer() {
+function BookListContainer({ bookData }) {
+
   return (
     <div>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home bookData={bookData} />
         </Route>
         <Route path="/currently-reading">
           <CurrentList />

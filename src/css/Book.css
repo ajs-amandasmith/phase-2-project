@@ -1,0 +1,16 @@
+.book {
+  border-top: black solid
+}
+
+.title {
+  font-family: Times, 'Times New Roman', serif;
+}
+
+.author {
+  font-family: Times, 'Times New Roman', serif;
+}
+
+.book-image {
+  height: 200px
+}
+
