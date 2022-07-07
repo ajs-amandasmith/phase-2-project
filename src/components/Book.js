@@ -4,7 +4,7 @@ import BookDetail from "./BookDetail";
 
 function Book({ book }) {
   const [showDetail, setShowDetail] = useState(false);
-  console.log(book)
+  // console.log(book)
 
   // Converts the title to only capitalize the first letter of each word
   const bookTitle = book.title.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -13,14 +13,23 @@ function Book({ book }) {
     setShowDetail(!showDetail);
   }
 
+  function handleSelectChange(e) {
+    console.log(e.target.value)
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    console.log(e.target)
+  }
+
   return (
     <div className="book">
       <h2 className="title">{bookTitle}</h2>
       <img className="book-image" src={book.book_image} alt={book.title}></img>
       <h3 className="author">Written by: {book.author}</h3>
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
-      <form>
-        <select>
+      <form onSubmit={e => handleFormSubmit(e)}>
+        <select onChange={e => handleSelectChange(e)}>
           <option>To Read List</option>
           <option>Have Read List</option>
           <option>Currently Reading List</option>

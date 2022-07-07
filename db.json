@@ -1,5 +1,17 @@
 {
   "books": [
-
+    {
+      "id": 1,
+      "title": "test",
+      "book_img": "url goes here",
+      "author": "someone",
+      "description": "this is a book",
+      "publisher": "published",
+      "rank": 1432,
+      "rank_last_week": 342,
+      "weeks_on_list": 45,
+      "list": "have-read",
+      "primary_isbn10": 4840
+    }
   ]
 }
