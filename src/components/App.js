@@ -30,13 +30,18 @@ function App() {
       })
   }, [])
 
+  function addBookToList(book) {
+    const newBookList = [...bookUserData, book]
+    setBookUserData(newBookList)
+  }
+
   return (
     <div>
       <header className="App-header">
         The New York Times Reading List
       </header>
       <NavBar />
-      {status === 'loading' ? "Loading..." : <BookListContainer bookData={bookData} bookUserData={bookUserData} />}
+      {status === 'loading' ? "Loading..." : <BookListContainer bookData={bookData} bookUserData={bookUserData} addBookToList={addBookToList} />}
     </div>
 
     // <div className="App">

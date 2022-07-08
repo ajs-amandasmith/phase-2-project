@@ -5,7 +5,7 @@ import ReadList from "./ReadList";
 import CurrentList from "./CurrentList";
 import Home from "./Home";
 
-function BookListContainer({ bookData, bookUserData }) {
+function BookListContainer({ bookData, bookUserData, addBookToList }) {
   const currentListData = bookUserData.filter(book => book.list === "currently-reading");
   const toReadListData = bookUserData.filter(book => book.list === "to-read");
   const readListData = bookUserData.filter(book => book.list === "have-read");
@@ -14,7 +14,7 @@ function BookListContainer({ bookData, bookUserData }) {
     <div>
       <Switch>
         <Route exact path="/">
-          <Home bookData={bookData} bookUserData={bookUserData} />
+          <Home bookData={bookData} bookUserData={bookUserData} addBookToList={addBookToList} />
         </Route>
         <Route path="/currently-reading">
           <CurrentList currentListData={currentListData} bookUserData={bookUserData} />
