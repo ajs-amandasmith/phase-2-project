@@ -10,34 +10,8 @@
       "rank_last_week": 1,
       "weeks_on_list": 3,
       "primary_isbn10": "0316258679",
-      "list": "currently-reading",
+      "list": "to-read",
       "id": 1
-    },
-    {
-      "title": "SPARRING PARTNERS",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg",
-      "author": "John Grisham",
-      "description": "Three novellas: “Homecoming,” “Strawberry Moon” and “Sparring Partners.”",
-      "publisher": "Doubleday",
-      "rank": 2,
-      "rank_last_week": 2,
-      "weeks_on_list": 5,
-      "primary_isbn10": "0385549326",
-      "list": "currently-reading",
-      "id": 2
-    },
-    {
-      "title": "SUSPECTS",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9781984821676.jpg",
-      "author": "Danielle Steel",
-      "description": "A C.I.A. agent on a covert mission develops a relationship with a woman who is considered fashion royalty and has a tragic past.",
-      "publisher": "Delacorte",
-      "rank": 3,
-      "rank_last_week": 0,
-      "weeks_on_list": 1,
-      "primary_isbn10": "1984821679",
-      "list": "currently-reading",
-      "id": 3
     }
   ]
 }

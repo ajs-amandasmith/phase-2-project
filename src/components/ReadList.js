@@ -1,15 +1,24 @@
 import React from "react";
+import '../css/ReadList.css';
 import Book from "./Book";
 
-function ReadList({ readListData, bookUserData, updateBookList }) {
+function ReadList({ readListData, bookUserData, updateBookList, isLoggedIn }) {
   const displayBooks = readListData.map(book => (
-    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} updateBookList={updateBookList} />
+    <Book 
+      key={book.primary_isbn10} 
+      book={book} 
+      bookUserData={bookUserData} 
+      updateBookList={updateBookList} 
+      isLoggedIn={isLoggedIn}
+    />
   ))
 
+  const loginNotif = <h3>Please Log In</h3>
+
   return (
-    <div>
-      <h1>Have Read List</h1>
-      {displayBooks}
+    <div className="read-list">
+      <h1 className="header">Have Read List</h1>
+      {isLoggedIn ? displayBooks : loginNotif}
     </div>
   )
 }

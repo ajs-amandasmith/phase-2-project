@@ -1,15 +1,24 @@
 import React from "react";
+import '../css/CurrentList.css';
 import Book from "./Book";
 
-function CurrentList({ currentListData, bookUserData, updateBookList }) {
+function CurrentList({ currentListData, bookUserData, updateBookList, isLoggedIn }) {
   const displayBooks = currentListData.map(book => (
-    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} updateBookList={updateBookList} />
+    <Book 
+      key={book.primary_isbn10} 
+      book={book} 
+      bookUserData={bookUserData} 
+      updateBookList={updateBookList} 
+      isLoggedIn={isLoggedIn}
+    />
   ))
 
+  const loginNotif = <h3>Please Log In</h3>
+
   return (
-    <div>
-      <h1>Current Reading List</h1>
-      {displayBooks}
+    <div className="current-list">
+      <h1 className="header">Current Reading List</h1>
+      {isLoggedIn ? displayBooks : loginNotif}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { useRouteMatch } from "react-router-dom";
 import '../css/Book.css';
 import BookDetail from "./BookDetail";
 
-function Book({ book, bookUserData, addBookToList, updateBookList }) {
+function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn }) {
   const [showDetail, setShowDetail] = useState(false);
   const [selectedList, setSelectedList] = useState("")
   const match = useRouteMatch();
@@ -66,28 +66,24 @@ function Book({ book, bookUserData, addBookToList, updateBookList }) {
     }
   }
 
-  // if the current book isn't in the db.json list
-    // post it
-  // if the current book is in the db.json list
-    // check the list key and if it's the same as what's being selected
-
-
   return (
     <div className="book">
       <h2 className="title">{bookTitle}</h2>
       <img className="book-image" src={book.book_image} alt={book.title}></img>
       <h3 className="author">Written by: {book.author}</h3>
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
-      <form onSubmit={e => handleFormSubmit(e)}>
-        <select defaultValue="" onChange={e => handleSelectChange(e)} required >
-          <option value="" disabled>{match.url === '/' ? "Select a List" : "Move to a New List"}</option>
-          <option value="to-read">To Read List</option>
-          <option value="have-read">Have Read List</option>
-          <option value="currently-reading">Currently Reading List</option>
-        </select>
-        <br></br>
-        <input type="submit" value="Add to List" />
-      </form>
+      {isLoggedIn ? (
+        <form onSubmit={e => handleFormSubmit(e)}>
+          <select defaultValue="" onChange={e => handleSelectChange(e)} required >
+            <option value="" disabled>{match.url === '/' ? "Select a List" : "Move to a New List"}</option>
+            <option value="to-read">To Read List</option>
+            <option value="have-read">Have Read List</option>
+            <option value="currently-reading">Currently Reading List</option>
+          </select>
+          <br></br>
+          <input type="submit" value="Add to List" />
+        </form> 
+      ) : null}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )
