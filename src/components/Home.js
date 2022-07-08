@@ -2,9 +2,9 @@ import React from "react";
 import Book from "./Book";
 import '../css/Home.css'
 
-function Home({ bookData }) {
+function Home({ bookData, bookUserData }) {
   const displayBooks = bookData.map(book => (
-    <Book key={book.primary_isbn10} book={book} />
+    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} />
   ))
 
   return (

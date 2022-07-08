@@ -14,16 +14,16 @@ function BookListContainer({ bookData, bookUserData }) {
     <div>
       <Switch>
         <Route exact path="/">
-          <Home bookData={bookData} />
+          <Home bookData={bookData} bookUserData={bookUserData} />
         </Route>
         <Route path="/currently-reading">
-          <CurrentList currentListData={currentListData} />
+          <CurrentList currentListData={currentListData} bookUserData={bookUserData} />
         </Route>
         <Route path="/have-read">
-          <ReadList readListData={readListData} />
+          <ReadList readListData={readListData} bookUserData={bookUserData} />
         </Route>
         <Route path="/to-read">
-          <ToReadList toReadListData={toReadListData} />
+          <ToReadList toReadListData={toReadListData} bookUserData={bookUserData} />
         </Route>
       </Switch>
     </div>

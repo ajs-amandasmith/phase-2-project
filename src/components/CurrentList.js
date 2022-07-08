@@ -1,9 +1,9 @@
 import React from "react";
 import Book from "./Book";
 
-function CurrentList({ currentListData }) {
+function CurrentList({ currentListData, bookUserData }) {
   const displayBooks = currentListData.map(book => (
-    <Book key={book.primary_isbn10} book={book} />
+    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} />
   ))
 
   return (

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useRouteMatch } from "react-router-dom";
 import '../css/Book.css';
 import BookDetail from "./BookDetail";
 
 function Book({ book }) {
   const [showDetail, setShowDetail] = useState(false);
+  const [selectedList, setSelectedList] = useState("")
+  const match = useRouteMatch();
+  // console.log(match)
   // console.log(book)
 
   // Converts the title to only capitalize the first letter of each word
@@ -14,13 +18,21 @@ function Book({ book }) {
   }
 
   function handleSelectChange(e) {
-    console.log(e.target.value)
+    setSelectedList(e.target.value)
   }
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(e.target)
+    if (match.url === '/') {
+      console.log(book)
+    }
   }
+
+  // if the current book isn't in the db.json list
+    // post it
+  // if the current book is in the db.json list
+    // check the list key and if it's the same as what's being selected
+
 
   return (
     <div className="book">
@@ -29,13 +41,14 @@ function Book({ book }) {
       <h3 className="author">Written by: {book.author}</h3>
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       <form onSubmit={e => handleFormSubmit(e)}>
-        <select onChange={e => handleSelectChange(e)}>
-          <option>To Read List</option>
-          <option>Have Read List</option>
-          <option>Currently Reading List</option>
+        <select defaultValue="default" onChange={e => handleSelectChange(e)} >
+          <option value="default" disabled>Select a List</option>
+          <option value="to-read">To Read List</option>
+          <option value="have-read">Have Read List</option>
+          <option value="currently-reading">Currently Reading List</option>
         </select>
         <br></br>
-        <button type="submit">Add to List</button>
+        <input type="submit" value="Add to List" />
       </form>
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
