@@ -7,8 +7,6 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
   const [showDetail, setShowDetail] = useState(false);
   const [selectedList, setSelectedList] = useState("")
   const match = useRouteMatch();
-  // console.log(match)
-  // console.log(book)
 
   // Converts the title to only capitalize the first letter of each word
   const bookTitle = book.title.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
