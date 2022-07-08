@@ -1,9 +1,9 @@
 import React from "react";
 import Book from "./Book";
 
-function ToReadList({ toReadListData, bookUserData }) {
+function ToReadList({ toReadListData, bookUserData, updateBookList }) {
   const displayBooks = toReadListData.map(book => (
-    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} />
+    <Book key={book.primary_isbn10} book={book} bookUserData={bookUserData} updateBookList={updateBookList} />
   ))
 
   return (

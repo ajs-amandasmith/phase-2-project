@@ -3,12 +3,12 @@ import { useRouteMatch } from "react-router-dom";
 import '../css/Book.css';
 import BookDetail from "./BookDetail";
 
-function Book({ book, bookUserData, addBookToList }) {
+function Book({ book, bookUserData, addBookToList, updateBookList }) {
   const [showDetail, setShowDetail] = useState(false);
   const [selectedList, setSelectedList] = useState("")
   const match = useRouteMatch();
   // console.log(match)
-  console.log(book)
+  // console.log(book)
 
   // Converts the title to only capitalize the first letter of each word
   const bookTitle = book.title.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -24,6 +24,7 @@ function Book({ book, bookUserData, addBookToList }) {
   function handleFormSubmit(e) {
     e.preventDefault();
     if (match.url === '/') {
+      // is checking to see if a book is already in the db.json file
       if (bookUserData.find(bookData => bookData.primary_isbn10 === book.primary_isbn10) === undefined) {
         fetch("http://localhost:3001/books", {
           method: "POST",
@@ -48,7 +49,20 @@ function Book({ book, bookUserData, addBookToList }) {
       } else {
         alert("You've already added this book to a list!")
       }
-      // console.log(bookUserData.find(bookData => bookData.primary_isbn10 === book.primary_isbn10))
+    } else if (match.url === '/' + selectedList) {
+      alert("This book is already in this list!")
+    } else {
+      fetch(`http://localhost:3001/books/${book.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          list: selectedList
+        })
+      })
+        .then(r => r.json())
+        .then(updatedBook => updateBookList(updatedBook))
     }
   }
 
@@ -66,7 +80,7 @@ function Book({ book, bookUserData, addBookToList }) {
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       <form onSubmit={e => handleFormSubmit(e)}>
         <select defaultValue="" onChange={e => handleSelectChange(e)} required >
-          <option value="" disabled>Select a List</option>
+          <option value="" disabled>{match.url === '/' ? "Select a List" : "Move to a New List"}</option>
           <option value="to-read">To Read List</option>
           <option value="have-read">Have Read List</option>
           <option value="currently-reading">Currently Reading List</option>

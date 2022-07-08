@@ -35,13 +35,28 @@ function App() {
     setBookUserData(newBookList)
   }
 
+  function updateBookList(book) {
+    const updatedList = bookUserData.map(oldBook => {
+      if (oldBook.id === book.id) return book;
+      return oldBook;
+    })
+    setBookUserData(updatedList)
+  }
+
   return (
     <div>
       <header className="App-header">
         The New York Times Reading List
       </header>
       <NavBar />
-      {status === 'loading' ? "Loading..." : <BookListContainer bookData={bookData} bookUserData={bookUserData} addBookToList={addBookToList} />}
+      {status === 'loading' ? "Loading..." : 
+        <BookListContainer 
+          bookData={bookData} 
+          bookUserData={bookUserData} 
+          addBookToList={addBookToList} 
+          updateBookList={updateBookList}
+        />
+      }
     </div>
 
     // <div className="App">
