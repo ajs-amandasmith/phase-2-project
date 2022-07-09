@@ -3,10 +3,11 @@ import { useRouteMatch } from "react-router-dom";
 import '../css/Book.css';
 import BookDetail from "./BookDetail";
 import SelectForm from "./SelectForm";
+import RateForm from "./RateForm";
 
 function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn }) {
   const [showDetail, setShowDetail] = useState(false);
-  const [selectedList, setSelectedList] = useState("")
+  const [selectedList, setSelectedList] = useState("");
   const match = useRouteMatch();
 
   // Converts the title to only capitalize the first letter of each word
@@ -42,7 +43,7 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
             primary_isbn10: book.primary_isbn10,
             list: selectedList,
             comments: [],
-            rating: ""
+            rating: 0
           })
         })
           .then(r => r.json())
@@ -59,20 +60,13 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          list: selectedList
+          list: selectedList,
         })
       })
         .then(r => r.json())
         .then(updatedBook => updateBookList(updatedBook))
     }
   }
-
-  const rateButton = <button>Rate This Book?</button>
-
-  const commentForms = <form>
-      <label>Rate this book?</label>
-      <input type="radio"></input>
-    </form>;
 
   return (
     <div className="book">
@@ -81,19 +75,7 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
       <h3 className="author">Written by: {book.author}</h3>
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
-      {/* {isLoggedIn ? (
-        <form onSubmit={e => handleFormSubmit(e)}>
-          <select defaultValue="" onChange={e => handleSelectChange(e)} required >
-            <option value="" disabled>{match.url === '/' ? "Select a List" : "Move to a New List"}</option>
-            <option value="to-read">To Read List</option>
-            <option value="currently-reading">Currently Reading List</option>
-            <option value="have-read">Have Read List</option>
-          </select>
-          <br></br>
-          <input type="submit" value={match.url === '/' ? "Add to List" : "Move to List"} />
-        </form> 
-      ) : null} */}
-      {match.url === "/have-read" ? rateButton : null}
+      {match.url === "/have-read" ? <RateForm book={book} updateBookList={updateBookList} /> : null}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )

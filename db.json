@@ -10,9 +10,9 @@
       "rank_last_week": 1,
       "weeks_on_list": 3,
       "primary_isbn10": "0316258679",
-      "list": "to-read",
+      "list": "have-read",
       "comments": [],
-      "rating": "",
+      "rating": 4,
       "id": 1
     },
     {
@@ -25,9 +25,9 @@
       "rank_last_week": 2,
       "weeks_on_list": 5,
       "primary_isbn10": "0385549326",
-      "list": "have-read",
+      "list": "currently-reading",
       "comments": [],
-      "rating": "",
+      "rating": 0,
       "id": 2
     },
     {
@@ -42,38 +42,8 @@
       "primary_isbn10": "1984821679",
       "list": "have-read",
       "comments": [],
-      "rating": "",
+      "rating": 3,
       "id": 3
-    },
-    {
-      "title": "ESCAPE",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780316499446.jpg",
-      "author": "James Patterson and David Ellis",
-      "description": "The third book in the Billy Harney thriller series. Detective Harney goes after a billionaire crime boss and a prison escape artist.",
-      "publisher": "Little, Brown",
-      "rank": 5,
-      "rank_last_week": 4,
-      "weeks_on_list": 2,
-      "primary_isbn10": "0316499447",
-      "list": "have-read",
-      "comments": [],
-      "rating": "",
-      "id": 4
-    },
-    {
-      "title": "THE MIDNIGHT LIBRARY",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg",
-      "author": "Matt Haig",
-      "description": "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
-      "publisher": "Viking",
-      "rank": 7,
-      "rank_last_week": 6,
-      "weeks_on_list": 82,
-      "primary_isbn10": "0525559477",
-      "list": "currently-reading",
-      "comments": [],
-      "rating": "",
-      "id": 5
     }
   ]
 }
