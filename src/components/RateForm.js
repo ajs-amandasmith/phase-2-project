@@ -4,7 +4,6 @@ function RateForm({ book, updateBookList }) {
   const [hasRating, setHasRating] = useState(false);
   const [showRating, setShowRating] = useState(false);
   const [rating, setRating] = useState(book.rating);
-  console.log(rating)
 
   useEffect(() => {
     if (book.rating > 0) {
