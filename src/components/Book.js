@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import '../css/Book.css';
 import BookDetail from "./BookDetail";
+import SelectForm from "./SelectForm";
 
 function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn }) {
   const [showDetail, setShowDetail] = useState(false);
@@ -39,7 +40,9 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
             rank_last_week: book.rank_last_week,
             weeks_on_list: book.weeks_on_list,
             primary_isbn10: book.primary_isbn10,
-            list: selectedList
+            list: selectedList,
+            comments: [],
+            rating: ""
           })
         })
           .then(r => r.json())
@@ -64,24 +67,33 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
     }
   }
 
+  const rateButton = <button>Rate This Book?</button>
+
+  const commentForms = <form>
+      <label>Rate this book?</label>
+      <input type="radio"></input>
+    </form>;
+
   return (
     <div className="book">
       <h2 className="title">{bookTitle}</h2>
       <img className="book-image" src={book.book_image} alt={book.title}></img>
       <h3 className="author">Written by: {book.author}</h3>
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
-      {isLoggedIn ? (
+      {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
+      {/* {isLoggedIn ? (
         <form onSubmit={e => handleFormSubmit(e)}>
           <select defaultValue="" onChange={e => handleSelectChange(e)} required >
             <option value="" disabled>{match.url === '/' ? "Select a List" : "Move to a New List"}</option>
             <option value="to-read">To Read List</option>
-            <option value="have-read">Have Read List</option>
             <option value="currently-reading">Currently Reading List</option>
+            <option value="have-read">Have Read List</option>
           </select>
           <br></br>
-          <input type="submit" value="Add to List" />
+          <input type="submit" value={match.url === '/' ? "Add to List" : "Move to List"} />
         </form> 
-      ) : null}
+      ) : null} */}
+      {match.url === "/have-read" ? rateButton : null}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )
