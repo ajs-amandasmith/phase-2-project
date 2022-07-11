@@ -78,9 +78,3 @@ function RateForm({ book, updateBookList }) {
 }
 
 export default RateForm;
-
-
-// const commentForms = <form>
-//     <label>Rate this book?</label>
-//     <input type="radio"></input>
-//   </form>;
