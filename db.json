@@ -1,3 +1,19 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "THE HOTEL NANTUCKET",
+      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780316258678.jpg",
+      "author": "Elin Hilderbrand",
+      "description": "The new general manager of a hotel far from its Gilded Age heyday deals with the complicated pasts of her guests and staff.",
+      "publisher": "Little, Brown",
+      "rank": 1,
+      "rank_last_week": 1,
+      "weeks_on_list": 3,
+      "primary_isbn10": "0316258679",
+      "list": "have-read",
+      "review": "",
+      "rating": 3,
+      "id": 1
+    }
+  ]
 }

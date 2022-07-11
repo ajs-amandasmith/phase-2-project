@@ -17,14 +17,11 @@ function RateForm({ book, updateBookList }) {
   }
 
   function handleRatingChange(e) {
-    console.log(e.target.checked)
-    console.log(typeof e.target.value)
     setRating(parseInt(e.target.value))
   }
 
   function handleUpdateRatingClick(e) {
     setShowRating(!showRating)
-    console.log(document.getElementById('rating-form'))
   }
 
   function cancelUpdateClick(e) {
