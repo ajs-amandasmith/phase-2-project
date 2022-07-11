@@ -17,11 +17,23 @@ function RateForm({ book, updateBookList }) {
   }
 
   function handleRatingChange(e) {
-    setRating(e.target.value)
+    console.log(e.target.checked)
+    console.log(typeof e.target.value)
+    setRating(parseInt(e.target.value))
   }
 
   function handleUpdateRatingClick(e) {
     setShowRating(!showRating)
+    console.log(document.getElementById('rating-form'))
+  }
+
+  function cancelUpdateClick(e) {
+    if (book.rating === 0) {
+      setShowRating(false)
+      setHasRating(false)
+    } else {
+      setShowRating(!showRating)
+    }
   }
 
   function handleFormSubmit(e) {
@@ -45,21 +57,22 @@ function RateForm({ book, updateBookList }) {
   return (
     <div>
       {hasRating ? null : <button onClick={handleRateClick}>Rate This Book?</button>}
-      {hasRating && !showRating ? <form onSubmit={e => handleFormSubmit(e)}>
+      {hasRating && !showRating ? <form id="rating-form" onSubmit={e => handleFormSubmit(e)}>
         <label>Rate this book?</label>
-        <br></br>
-        <input type="radio" id="1" name="rating" value={1} onChange={e => handleRatingChange(e)}></input>
-        <label>1</label>
-        <input type="radio" id="2" name="rating" value={2} onChange={e => handleRatingChange(e)}></input>
-        <label>2</label>
-        <input type="radio" id="3" name="rating" value={3} onChange={e => handleRatingChange(e)}></input>
-        <label>3</label>
-        <input type="radio" id="4" name="rating" value={4} onChange={e => handleRatingChange(e)}></input>
-        <label>4</label>
-        <input type="radio" id="5" name="rating" value={5} onChange={e => handleRatingChange(e)}></input>
-        <label>5</label>
-        <br></br>
+        <div>
+          <input type="radio" id="1" name="rating" checked={rating === 1} value={1} onChange={e => handleRatingChange(e)}></input>
+          <label htmlFor='1'>1</label>
+          <input type="radio" id="2" name="rating" checked={rating === 2} value={2} onChange={e => handleRatingChange(e)}></input>
+          <label htmlFor='2'>2</label>
+          <input type="radio" id="3" name="rating" checked={rating === 3} value={3} onChange={e => handleRatingChange(e)}></input>
+          <label htmlFor='3'>3</label>
+          <input type="radio" id="4" name="rating" checked={rating === 4} value={4} onChange={e => handleRatingChange(e)}></input>
+          <label htmlFor='4'>4</label>
+          <input type="radio" id="5" name="rating" checked={rating === 5} value={5} onChange={e => handleRatingChange(e)}></input>
+          <label htmlFor='5'>5</label>
+        </div>
         <input type="submit" value="Submit Rating"></input>
+        <button onClick={cancelUpdateClick}>Cancel Update?</button>
       </form> : null}
       {showRating ? <><h4>Your Rating: {book.rating}</h4>
         <button onClick={handleUpdateRatingClick}>Update Rating?</button></> : null} 
