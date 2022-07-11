@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/NavBar.css';
 import { NavLink } from "react-router-dom";
 
 function NavBar({ isLoggedIn, handleLogInClick }) {
   const activeLink = {
     background: "white",
-    color: "#282c34"
+    color: "#282c34",
+    padding: "5px",
   }
 
   return (

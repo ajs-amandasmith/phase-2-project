@@ -1,6 +1,6 @@
 import React from "react";
 import Book from "./Book";
-import '../css/Home.css'
+import '../css/BookLists.css'
 
 function Home({ bookData, bookUserData, addBookToList, isLoggedIn }) {
   const displayBooks = bookData.map(book => (
@@ -14,9 +14,9 @@ function Home({ bookData, bookUserData, addBookToList, isLoggedIn }) {
   ))
 
   return (
-    <div className="home">
+    <div className="list-container">
       <h1 className="header">Current Hardcover Best Sellers List</h1>
-      <div>
+      <div className="list">
         {displayBooks}
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
-import '../css/ToReadList.css';
+import '../css/BookLists.css';
 import Book from "./Book";
+import NotLoggedIn from "./NotLoggedIn";
 
 function ToReadList({ toReadListData, bookUserData, updateBookList, isLoggedIn, deleteBook }) {
   const displayBooks = toReadListData.map(book => (
@@ -14,12 +15,13 @@ function ToReadList({ toReadListData, bookUserData, updateBookList, isLoggedIn, 
     />
   ))
 
-  const loginNotif = <h3>Please Log In</h3>
-
   return (
-    <div className="to-read-list">
-      <h1 className="header">To Read List</h1>
-      {isLoggedIn ? displayBooks : loginNotif}
+    <div className="list-container">
+      {isLoggedIn ? <h1 className="header">To Read List</h1> : null}
+      <div className="list">
+        {isLoggedIn ? displayBooks : null}
+      </div>
+      {isLoggedIn ? null : <NotLoggedIn />}
     </div>
   )
 }

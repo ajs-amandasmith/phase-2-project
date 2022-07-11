@@ -11,7 +11,7 @@ function BookListContainer({ bookData, bookUserData, addBookToList, updateBookLi
   const readListData = bookUserData.filter(book => book.list === "have-read");
 
   return (
-    <div>
+    <div className="container">
       <Switch>
         <Route exact path="/">
           <Home 

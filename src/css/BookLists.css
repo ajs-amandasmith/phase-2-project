@@ -1,0 +1,23 @@
+.list-container {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  color: #282c34;
+  /* position: relative; */
+}
+
+.header {
+  text-align: center;
+  border-bottom: #282c34 solid 2px;
+}
+
+.list {
+  display: flex;
+}
+
+.log-in {
+  margin: auto;
+  width: 25%;
+  text-align: center;
+  color: #B22222;
+  font-size: 20px;
+}
