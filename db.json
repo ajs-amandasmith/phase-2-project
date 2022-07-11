@@ -14,21 +14,6 @@
       "review": "Love it!",
       "rating": 3,
       "id": 1
-    },
-    {
-      "title": "SPARRING PARTNERS",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg",
-      "author": "John Grisham",
-      "description": "Three novellas: “Homecoming,” “Strawberry Moon” and “Sparring Partners.”",
-      "publisher": "Doubleday",
-      "rank": 2,
-      "rank_last_week": 2,
-      "weeks_on_list": 5,
-      "primary_isbn10": "0385549326",
-      "list": "have-read",
-      "review": "Meh",
-      "rating": 0,
-      "id": 2
     }
   ]
 }
