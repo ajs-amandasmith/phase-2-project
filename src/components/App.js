@@ -48,6 +48,11 @@ function App() {
     setBookUserData(updatedList)
   }
 
+  function deleteBook(book) {
+    const updatedList = bookUserData.filter(oldbook => oldbook.id !== book.id)
+    setBookUserData(updatedList)
+  }
+
   return (
     <div>
       <header className="App-header">
@@ -61,6 +66,7 @@ function App() {
           addBookToList={addBookToList} 
           updateBookList={updateBookList}
           isLoggedIn={isLoggedIn}
+          deleteBook={deleteBook}
         />
       }
     </div>

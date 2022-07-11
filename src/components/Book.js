@@ -5,7 +5,7 @@ import BookDetail from "./BookDetail";
 import SelectForm from "./SelectForm";
 import RateForm from "./RateForm";
 
-function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn }) {
+function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn, deleteBook }) {
   const [showDetail, setShowDetail] = useState(false);
   const [selectedList, setSelectedList] = useState("");
   const match = useRouteMatch();
@@ -68,6 +68,14 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
     }
   }
 
+  function handleDelete(e) {
+    fetch(`http://localhost:3001/books/${book.id}`, {
+      method: "DELETE"
+    })
+      .then(r => r.json())
+      .then(deleteBook(book))
+  }
+
   return (
     <div className="book">
       <h2 className="title">{bookTitle}</h2>
@@ -76,6 +84,7 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn })
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
       {match.url === "/have-read" ? <RateForm book={book} updateBookList={updateBookList} /> : null}
+      {match.url === '/' ? null : <button onClick={handleDelete}>Delete Book from List?</button>}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )

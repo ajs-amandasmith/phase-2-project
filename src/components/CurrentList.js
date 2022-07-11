@@ -2,7 +2,7 @@ import React from "react";
 import '../css/CurrentList.css';
 import Book from "./Book";
 
-function CurrentList({ currentListData, bookUserData, updateBookList, isLoggedIn }) {
+function CurrentList({ currentListData, bookUserData, updateBookList, isLoggedIn, deleteBook }) {
   const displayBooks = currentListData.map(book => (
     <Book 
       key={book.primary_isbn10} 
@@ -10,6 +10,7 @@ function CurrentList({ currentListData, bookUserData, updateBookList, isLoggedIn
       bookUserData={bookUserData} 
       updateBookList={updateBookList} 
       isLoggedIn={isLoggedIn}
+      deleteBook={deleteBook}
     />
   ))
 

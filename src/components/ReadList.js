@@ -2,7 +2,7 @@ import React from "react";
 import '../css/ReadList.css';
 import Book from "./Book";
 
-function ReadList({ readListData, bookUserData, updateBookList, isLoggedIn }) {
+function ReadList({ readListData, bookUserData, updateBookList, isLoggedIn, deleteBook }) {
   const displayBooks = readListData.map(book => (
     <Book 
       key={book.primary_isbn10} 
@@ -10,6 +10,7 @@ function ReadList({ readListData, bookUserData, updateBookList, isLoggedIn }) {
       bookUserData={bookUserData} 
       updateBookList={updateBookList} 
       isLoggedIn={isLoggedIn}
+      deleteBook={deleteBook}
     />
   ))
 

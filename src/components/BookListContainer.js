@@ -5,7 +5,7 @@ import ReadList from "./ReadList";
 import CurrentList from "./CurrentList";
 import Home from "./Home";
 
-function BookListContainer({ bookData, bookUserData, addBookToList, updateBookList, isLoggedIn }) {
+function BookListContainer({ bookData, bookUserData, addBookToList, updateBookList, isLoggedIn, deleteBook }) {
   const currentListData = bookUserData.filter(book => book.list === "currently-reading");
   const toReadListData = bookUserData.filter(book => book.list === "to-read");
   const readListData = bookUserData.filter(book => book.list === "have-read");
@@ -27,6 +27,7 @@ function BookListContainer({ bookData, bookUserData, addBookToList, updateBookLi
             bookUserData={bookUserData} 
             updateBookList={updateBookList} 
             isLoggedIn={isLoggedIn}
+            deleteBook={deleteBook}
           />
         </Route>
         <Route path="/have-read">
@@ -35,6 +36,7 @@ function BookListContainer({ bookData, bookUserData, addBookToList, updateBookLi
             bookUserData={bookUserData} 
             updateBookList={updateBookList} 
             isLoggedIn={isLoggedIn}
+            deleteBook={deleteBook}
           />
         </Route>
         <Route path="/to-read">
@@ -43,6 +45,7 @@ function BookListContainer({ bookData, bookUserData, addBookToList, updateBookLi
             bookUserData={bookUserData} 
             updateBookList={updateBookList} 
             isLoggedIn={isLoggedIn}
+            deleteBook={deleteBook}
           />
         </Route>
       </Switch>
