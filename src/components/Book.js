@@ -82,11 +82,11 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn, d
       <h2 className="title">{bookTitle}</h2>
       <img className="book-image" src={book.book_image} alt={book.title}></img>
       <h3 className="author">Written by: {book.author}</h3>
-      <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
+      <button className="more-info-btn" onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
       {match.url === "/have-read" ? <RateForm book={book} updateBookList={updateBookList} /> : null}
       {match.url === "/have-read" ? <ReviewForm book={book} updateBookList={updateBookList} /> : null}
-      {match.url === '/' ? null : <button onClick={handleDelete}>Delete Book from List?</button>}
+      {match.url === '/' ? null : <button className="delete-book" onClick={handleDelete}>Delete Book from List?</button>}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )

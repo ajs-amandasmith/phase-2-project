@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/BookLists.css';
 
 function RateForm({ book, updateBookList }) {
   const [hasRating, setHasRating] = useState(false);
@@ -52,7 +53,7 @@ function RateForm({ book, updateBookList }) {
   }
 
   return (
-    <div>
+    <div className="rate-book">
       {hasRating ? null : <button onClick={handleRateClick}>Rate This Book?</button>}
       {hasRating && !showRating ? <form id="rating-form" onSubmit={e => handleFormSubmit(e)}>
         <label>Rate this book?</label>

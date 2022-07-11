@@ -20,12 +20,71 @@
 
 .list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto;
-  justify-content: space-evenly;
+  justify-content: center;
+  grid-row-gap: 20px;
+  /* align-content: center; */
 }
 
 .book {
-
+  border: 2px solid black;
+  /* margin: auto; */
+  width: 75%;
+  margin-left: 10px;
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+  justify-content: left;
+  grid-template-areas: 
+    'image image book-detail'
+    '. title book-detail'
+    '. author book-detail'
+    '. more-info-btn book-detail '
+    '. select-form book-detail'
+    '. rate-book book-detail'
+    '. review-book book-detail'
+    '. delete-book book-detail'
+    /* '. book-detail .' */
+    ;
 }
 
+.book-image {
+  height: 200px;
+  margin: 10px;
+  grid-area: image;
+  border: red 1px solid;
+}
+
+.title {
+  grid-area: title;
+}
+
+.author {
+  grid-area: author;
+}
+
+.more-info-btn {
+  grid-area: more-info-btn;
+}
+
+.select-form {
+  grid-area: select-form;
+}
+
+.rate-book {
+  grid-area: rate-book;
+}
+
+.review-book {
+  grid-area: review-book;
+}
+
+.delete-book {
+  grid-area: delete-book;
+}
+
+.book-detail {
+  grid-area: book-detail;
+  width: 50%;
+  margin-left: 10px;
+}

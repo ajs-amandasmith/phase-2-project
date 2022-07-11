@@ -1,9 +1,9 @@
 import React from 'react';
-import '../css/BookDetail.css'
+import '../css/BookLists.css'
 
 function BookDetail({ book }) {
   return (
-    <div className="detail">
+    <div className="book-detail">
       <h2>Book Details</h2>
       <h3>Description</h3>
       <p>{book.description}</p>

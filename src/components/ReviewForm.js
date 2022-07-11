@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReviewDetails from "./ReviewDetails";
+import '../css/BookLists.css';
 
 function ReviewForm({ book, updateBookList }) {
   const [review, setReview] = useState(book.review);
@@ -56,7 +57,7 @@ function ReviewForm({ book, updateBookList }) {
   }
 
   return (
-    <div>
+    <div className="review-book">
       {!hasReview ? <form onSubmit={handleReviewSubmit}>
         <input type="textarea" value={review} onChange={handleReviewChange}></input>
         <input type="submit" value="Submit Review"></input>
