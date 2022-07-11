@@ -7,6 +7,7 @@ function NavBar({ isLoggedIn, handleLogInClick }) {
     background: "white",
     color: "#282c34",
     padding: "5px",
+    "margin-top": "5px",
   }
 
   return (

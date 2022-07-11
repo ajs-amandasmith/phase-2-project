@@ -10,10 +10,6 @@
   border-bottom: #282c34 solid 2px;
 }
 
-.list {
-  display: flex;
-}
-
 .log-in {
   margin: auto;
   width: 25%;
@@ -21,3 +17,15 @@
   color: #B22222;
   font-size: 20px;
 }
+
+.list {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: space-evenly;
+}
+
+.book {
+
+}
+
