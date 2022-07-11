@@ -85,7 +85,7 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn, d
       <button onClick={e => handleDetailClick(e)}>{showDetail ? "Show Less Info?" : "Show More Info?"}</button>
       {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
       {match.url === "/have-read" ? <RateForm book={book} updateBookList={updateBookList} /> : null}
-      {match.url === "/have-read" ? <ReviewForm /> : null}
+      {match.url === "/have-read" ? <ReviewForm book={book} updateBookList={updateBookList} /> : null}
       {match.url === '/' ? null : <button onClick={handleDelete}>Delete Book from List?</button>}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
