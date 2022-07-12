@@ -1,3 +1,9 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
 .list-container {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14px;
@@ -41,9 +47,8 @@
   grid-template-areas: 
     'image title title'
     'image author author'
-    'image . .'
+    'image book-detail book-detail'
     'more-info-btn select-form .'
-    'book-detail book-detail .'
     'rate-book rate-book .'
     'review-book . .'
     'delete-book . .'
@@ -59,10 +64,14 @@
 
 .title {
   grid-area: title;
+  filter: drop-shadow(5px 5px 5px gray);
 }
 
 .author {
   grid-area: author;
+  filter: drop-shadow(5px 5px 5px gray);
+  margin: 0px;
+  border-bottom: solid 1px #282c34;
 }
 
 .more-info-btn {
@@ -74,12 +83,38 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   height: 20px;
   width: 150px;
-  /* position: absolute; */
   bottom: 0px;
+  border-radius: 4px;
 }
 
-.select-form {
+.select-div {
   grid-area: select-form;
+}
+
+/* .select { */
+  /* display: inline-block; */
+  /* appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1m 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none; */
+/* } */
+
+.list-btn {
+  background-color: #282c34;
+  display: inline-block;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  width: 150px;
+  margin: 0px 0px 10px 0px;
 }
 
 .rate-book {
@@ -98,4 +133,28 @@
   grid-area: book-detail;
   width: 50%;
   margin-left: 10px;
+  width: 250px;
+}
+
+.book-detail h5 {
+  margin: 0px 10px;
+}
+
+.book-detail h5:last-child {
+  margin-bottom: 10px;
+}
+
+.book-detail h3 {
+  margin: 0px;
+  margin-top: 2px;
+  border-top: dotted 1px #282c34;
+}
+
+.book-detail h2 {
+  margin: 0px;
+  margin-top: 8px;
+}
+
+.book-detail p {
+  border-bottom: dotted 1px #282c34;
 }

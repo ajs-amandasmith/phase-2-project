@@ -4,18 +4,21 @@ import '../css/BookLists.css';
 function SelectForm({ handleFormSubmit, handleSelectChange, match }) {
   
   return (
-    <div className="select-form">
-      <form onSubmit={e => handleFormSubmit(e)}>
-        <select defaultValue="" onChange={e => handleSelectChange(e)} required>
-          <option value="" disabled>
-            {match.url === '/' ? "Select a List" : "Move to a New List"}
-          </option>
-          <option value="to-read">To Read List</option>
-          <option value="currently-reading">Currently Reading List</option>
-          <option value="have-read">Have Read List</option>
-        </select>
-        <br></br>
-        <input type="submit" value={match.url === '/' ? "Add to List" : "Move to List"} />
+    <div className="select-div">
+      <form className="select-form" onSubmit={e => handleFormSubmit(e)}>
+        <div className="select">
+          <select defaultValue="" name="selections" onChange={e => handleSelectChange(e)} required>
+            <option value="" disabled>
+              {match.url === '/' ? "Select a List" : "Move to a New List"}
+            </option>
+            <option value="to-read">To Read List</option>
+            <option value="currently-reading">Currently Reading List</option>
+            <option value="have-read">Have Read List</option>
+          </select>
+        </div>
+        <div>
+          <input className="list-btn" type="submit" value={match.url === '/' ? "Add to List" : "Move to List"} />
+        </div>
       </form>
     </div>
   )
