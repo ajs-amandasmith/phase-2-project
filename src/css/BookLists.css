@@ -48,9 +48,10 @@
     'image title title'
     'image author author'
     'image book-detail book-detail'
-    'more-info-btn select-form .'
-    'rate-book rate-book .'
-    'review-book . .'
+    'more-info-btn book-detail book-detail'
+    'select-form . .'
+    'rate-book rate-book rate-book'
+    'review-book review-book review-book'
     'delete-book . .'
     ;
 }
@@ -71,6 +72,7 @@
   grid-area: author;
   filter: drop-shadow(5px 5px 5px gray);
   margin: 0px;
+  margin-right: 10px;
   border-bottom: solid 1px #282c34;
 }
 
@@ -89,6 +91,8 @@
 
 .select-div {
   grid-area: select-form;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /* .select { */
@@ -113,20 +117,149 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-radius: 4px;
   filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
   width: 150px;
   margin: 0px 0px 10px 0px;
 }
 
 .rate-book {
   grid-area: rate-book;
+  border-top: 2px dotted black;
+  margin-left: 10px;
+}
+
+.rate-button {
+  background-color: #006400;
+  display: inline-block;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.rate-book label{
+  margin: 10px;
+  font-weight: bold;
+}
+
+.rate-book h4 {
+  margin: 10px;
+  border: 1px dotted black;
+}
+
+.radio {
+  filter: drop-shadow(3px 3px 3px black);
+  background-color: #282c34;
+}
+
+.update {
+  background-color: #006400;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin: 10px 0px 0px 10px;
+}
+
+.cancel {
+  background-color: #800000;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin: 10px 0px 0px 10px;
+}
+
+.submit-rating {
+  background-color: #006400;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin: 10px 0px 0px 10px;
 }
 
 .review-book {
   grid-area: review-book;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px dotted black;
+  border-top: 2px dotted black;
+}
+
+.review-book h4 {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.review-book p {
+  margin-top: 5px;
+  margin-left: 5px;
+  border: dotted 1px black;
+}
+
+.review-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-review {
+  background-color: #282c34;
+  display: inline-block;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin: 0px 0px 10px 0px;
+}
+
+.edit-review {
+  background-color: #006400;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.delete-review {
+  background-color: #800000;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin-left: 10px;
 }
 
 .delete-book {
   grid-area: delete-book;
+  background-color: #800000;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  filter: drop-shadow(5px 5px 5px black);
+  height: 20px;
+  width: 150px;
+  margin-left: 10px;
+  /* margin-top: 45px; */
+  margin-bottom: 10px;
 }
 
 .book-detail {

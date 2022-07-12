@@ -58,9 +58,9 @@ function ReviewForm({ book, updateBookList }) {
 
   return (
     <div className="review-book">
-      {!hasReview ? <form onSubmit={handleReviewSubmit}>
-        <input type="textarea" value={review} onChange={handleReviewChange}></input>
-        <input type="submit" value="Submit Review"></input>
+      {!hasReview ? <form className="review-form" onSubmit={handleReviewSubmit}>
+        <input type="textarea" value={review} placeholder="Enter your review here" onChange={handleReviewChange}></input>
+        <input className="submit-review" type="submit" value="Submit Review"></input>
       </form> : null}
       {hasReview ? <ReviewDetails book={book} handleEditReview={handleEditReview} handleDeleteReview={handleDeleteReview} /> : null}
     </div>

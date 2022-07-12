@@ -3,9 +3,10 @@ import React from 'react';
 function ReviewDetails({ book, handleEditReview, handleDeleteReview }) {
   return (
     <div>
-      <p>User Review: {book.review}</p>
-      <button onClick={e => handleEditReview(e)}>Edit Review</button>
-      <button onClick={e=> handleDeleteReview(e)}>Delete Review</button>
+      <h4>User Review:</h4>
+      <p>{book.review}</p>
+      <button className="edit-review" onClick={e => handleEditReview(e)}>Edit Review</button>
+      <button className="delete-review" onClick={e=> handleDeleteReview(e)}>Delete Review</button>
     </div>
   )
 }

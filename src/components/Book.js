@@ -86,7 +86,7 @@ function Book({ book, bookUserData, addBookToList, updateBookList, isLoggedIn, d
       {isLoggedIn ? <SelectForm handleFormSubmit={handleFormSubmit} handleSelectChange={handleSelectChange} match={match} /> : null}
       {match.url === "/have-read" ? <RateForm book={book} updateBookList={updateBookList} /> : null}
       {match.url === "/have-read" ? <ReviewForm book={book} updateBookList={updateBookList} /> : null}
-      {match.url === '/' ? null : <button className="delete-book" onClick={handleDelete}>Delete Book from List?</button>}
+      {match.url === '/' ? null : <button className="delete-book" onClick={handleDelete}>Delete Book</button>}
       {showDetail ? <BookDetail book={book} /> : null}
     </div>
   )

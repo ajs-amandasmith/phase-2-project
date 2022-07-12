@@ -9,7 +9,7 @@ function SelectForm({ handleFormSubmit, handleSelectChange, match }) {
         <div className="select">
           <select defaultValue="" name="selections" onChange={e => handleSelectChange(e)} required>
             <option value="" disabled>
-              {match.url === '/' ? "Select a List" : "Move to a New List"}
+              {match.url === '/' ? "Add to a List" : "Move to a New List"}
             </option>
             <option value="to-read">To Read List</option>
             <option value="currently-reading">Currently Reading List</option>

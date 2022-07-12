@@ -54,26 +54,26 @@ function RateForm({ book, updateBookList }) {
 
   return (
     <div className="rate-book">
-      {hasRating ? null : <button onClick={handleRateClick}>Rate This Book?</button>}
+      {hasRating ? null : <button className="rate-button" onClick={handleRateClick}>Rate This Book?</button>}
       {hasRating && !showRating ? <form id="rating-form" onSubmit={e => handleFormSubmit(e)}>
         <label>Rate this book?</label>
         <div>
-          <input type="radio" id="1" name="rating" checked={rating === 1} value={1} onChange={e => handleRatingChange(e)}></input>
+          <input type="radio" id="1" className="radio" name="rating" checked={rating === 1} value={1} onChange={e => handleRatingChange(e)}></input>
           <label htmlFor='1'>1</label>
-          <input type="radio" id="2" name="rating" checked={rating === 2} value={2} onChange={e => handleRatingChange(e)}></input>
+          <input type="radio" id="2" className="radio" name="rating" checked={rating === 2} value={2} onChange={e => handleRatingChange(e)}></input>
           <label htmlFor='2'>2</label>
-          <input type="radio" id="3" name="rating" checked={rating === 3} value={3} onChange={e => handleRatingChange(e)}></input>
+          <input type="radio" id="3" className="radio" name="rating" checked={rating === 3} value={3} onChange={e => handleRatingChange(e)}></input>
           <label htmlFor='3'>3</label>
-          <input type="radio" id="4" name="rating" checked={rating === 4} value={4} onChange={e => handleRatingChange(e)}></input>
+          <input type="radio" id="4" className="radio" name="rating" checked={rating === 4} value={4} onChange={e => handleRatingChange(e)}></input>
           <label htmlFor='4'>4</label>
-          <input type="radio" id="5" name="rating" checked={rating === 5} value={5} onChange={e => handleRatingChange(e)}></input>
+          <input type="radio" id="5" className="radio" name="rating" checked={rating === 5} value={5} onChange={e => handleRatingChange(e)}></input>
           <label htmlFor='5'>5</label>
         </div>
-        <input type="submit" value="Submit Rating"></input>
-        <button onClick={cancelUpdateClick}>Cancel Update?</button>
+        <input type="submit" value="Submit Rating" className="submit-rating"></input>
+        <button className="cancel" onClick={cancelUpdateClick}>Cancel Update?</button>
       </form> : null}
       {showRating ? <><h4>Your Rating: {book.rating}</h4>
-        <button onClick={handleUpdateRatingClick}>Update Rating?</button></> : null} 
+        <button className="update" onClick={handleUpdateRatingClick}>Update Rating?</button></> : null} 
     </div>
   )
 }

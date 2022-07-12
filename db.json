@@ -1,21 +1,6 @@
 {
   "books": [
     {
-      "title": "THE HOTEL NANTUCKET",
-      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780316258678.jpg",
-      "author": "Elin Hilderbrand",
-      "description": "The new general manager of a hotel far from its Gilded Age heyday deals with the complicated pasts of her guests and staff.",
-      "publisher": "Little, Brown",
-      "rank": 1,
-      "rank_last_week": 1,
-      "weeks_on_list": 3,
-      "primary_isbn10": "0316258679",
-      "list": "have-read",
-      "review": "Love it!",
-      "rating": 4,
-      "id": 1
-    },
-    {
       "title": "SPARRING PARTNERS",
       "book_image": "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg",
       "author": "John Grisham",
@@ -25,7 +10,7 @@
       "rank_last_week": 2,
       "weeks_on_list": 5,
       "primary_isbn10": "0385549326",
-      "list": "to-read",
+      "list": "currently-reading",
       "review": "",
       "rating": 0,
       "id": 2
@@ -44,6 +29,21 @@
       "review": "",
       "rating": 0,
       "id": 3
+    },
+    {
+      "title": "THE MEASURE",
+      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780063204201.jpg",
+      "author": "Nikki Erlick",
+      "description": "People around the world receive a small wooden box telling them the exact number of years they will live.",
+      "publisher": "Morrow",
+      "rank": 6,
+      "rank_last_week": 0,
+      "weeks_on_list": 1,
+      "primary_isbn10": "0063204207",
+      "list": "have-read",
+      "review": "",
+      "rating": 0,
+      "id": 4
     }
   ]
 }
