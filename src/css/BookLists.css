@@ -1,15 +1,8 @@
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-
 .list-container {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14px;
   color: #282c34;
   margin: 10px;
-  /* position: relative; */
 }
 
 .header {
@@ -32,17 +25,14 @@
   justify-content: center;
   grid-row-gap: 20px;
   margin-left: 130px;
-  /* align-content: center; */
 }
 
 .book {
   position: relative;
   border: 2px solid black;
-  /* margin: auto; */
   width: 75%;
   margin-left: 10px;
   display: grid;
-  /* grid-template-columns: auto auto auto; */
   justify-content: left;
   grid-template-areas: 
     'image title title'
@@ -94,21 +84,6 @@
   margin-left: 10px;
   margin-top: 10px;
 }
-
-/* .select { */
-  /* display: inline-block; */
-  /* appearance: none;
-  background-color: transparent;
-  border: none;
-  padding: 0 1m 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-  outline: none; */
-/* } */
 
 .list-btn {
   background-color: #282c34;
